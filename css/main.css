@@ -1,0 +1,19 @@
+/* For testing */
+ul {
+	list-style-type: none;
+}
+
+/*****************************
+*	Final Stuff ...probably	 *
+******************************/
+.container-fluid {
+	background: #EDEEEF;
+}
+
+.sidebar {
+	background: #080808;
+}
+
+.page-header {
+	border-bottom: none;
+}
