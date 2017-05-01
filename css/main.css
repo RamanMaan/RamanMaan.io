@@ -6,12 +6,34 @@ ul {
 /*****************************
 *	Final Stuff ...probably	 *
 ******************************/
-.container-fluid {
+body {
 	background: #EDEEEF;
+}
+
+.content.container-fluid {
+	background: #EDEEEF;
+	margin-right: 50px;
 }
 
 .sidebar {
 	background: #080808;
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 50px;
+	z-index: 10;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+}
+
+.nav-sidebar {
+	color: white;
+	z-index: 11;
+	padding: 0;
+	margin: auto;
 }
 
 .page-header {
