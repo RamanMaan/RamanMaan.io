@@ -12,6 +12,8 @@
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="css/Bootstrap/bootstrap.min.css">
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -19,29 +21,47 @@
 <body>
 <div class="content container-fluid">
 	<div class="row">
-		<div class="content col-xs-10">
+		<div class="content col-xs-12">
 			<div class="page-header">
-				<h1 id="main-item">Raman Maan</h1>
+				<h1 id="main-item">Raman <b>Maan</b></h1>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-		<ul id="nav">
-			<li><a href="#play">Play! / Press Me</a></li>
-			<li><a href="#projects">Projects</a></li>
-			<li><a href="#about">About Me</a></li>
-		</ul>
+		<div class="col-xs-12">
+			<ul id="nav">
+				<li class = "nav-items" id="play">Play!</li>
+				<li class = "nav-items" id="portfolio"><a href="https://github.com/Raman-Maan">Portfolio</a></li>
+				<li class = "nav-items" id="me">Me</li>
+			</ul>
+		</div>
 	</div>
 </div><!--close container-->
-<div class="sidebar">
+<div class="sidebar vertical-align">
 	<ul class="nav-sidebar">
-		<li>X</li>
-		<li>Y</li>
+		<!--TODO: find better icons to use-->
+		<li>
+			<a href="https://github.com/Raman-Maan">
+				<img src="images/github.svg" alt="GitHub" class="icon svg" id="side-git">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="images/play.svg" alt="Play" class="icon svg" id="side-play">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="images/contact.svg" alt="Me" class="icon svg" id="side-me">
+			</a>
+		</li>
 	</ul>
 </div>
 <!-- jQuery -->
 <script src="js/jQuery/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="js/Bootstrap/bootstrap.min.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
 </body>
 </html>

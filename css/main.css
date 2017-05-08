@@ -1,22 +1,27 @@
-/* For testing */
-ul {
-	list-style-type: none;
+* {
+	font-family: 'Raleway', sans-serif;
 }
 
-/*****************************
-*	Final Stuff ...probably	 *
-******************************/
 body {
 	background: #EDEEEF;
 }
 
+ul {
+	list-style-type: none;
+}
+
+a {
+	color: inherit;
+}
+
 .content.container-fluid {
-	background: #EDEEEF;
 	margin-right: 50px;
+	margin-top: 5vh;
+	margin-left: 3vh;
 }
 
 .sidebar {
-	background: #080808;
+	background: #171717;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -24,20 +29,57 @@ body {
 	width: 50px;
 	z-index: 10;
 	padding-top: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-	text-align: center;
-	display: flex;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .nav-sidebar {
-	color: white;
 	z-index: 11;
 	padding: 0;
 	margin: auto;
-	top: 50%;
 }
 
 .page-header {
 	border-bottom: none;
+	color: #150076;
+}
+
+.vertical-align {
+	display: flex;
+}
+
+.icon {
+	height: 100%;
+	width: 100%;
+	padding-top: 50%;
+	fill: #F0F0F0;
+}
+
+@media screen and (min-width: 1000px) {
+	#main-item{
+		font-size: 80px;
+	}
+	.nav-items {
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 999px) and (min-width: 600px) {
+	#main-item {
+		font-size: 7.5vw;
+	}
+
+	.nav-items {
+		font-size: 3.6vw;
+	}
+}
+
+@media screen and (max-width: 599px) and (min-width: 1px) {
+	#main-item {
+		font-size: 8.5vw;
+	}
+
+	.nav-items {
+		font-size: 4.6vw;
+	}
 }
