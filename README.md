@@ -1,9 +1,10 @@
 # Raman Maan
 My website/resume
  <ul>
- 	<li>make a nav bar that runs along the right side of the screen</li>
- 	<li>add formatting to the text elements</li>
- 	<li>get css going right</li>
- 	<li>add elements to navbar</li>
- 	<li>add js for game</li>
+ 	<li>make sidebar resize so it's bigger on larger screens, use that real estate!</li>
+ 	<li>add the games</li>
+ 	<li>get new icons for sidebar</li>
+ 	<li>create a proper favicon</li>
+ 	<li>add a scroll reveal on about me</li>
+ 	<li>make hover over links nicer (make font bolder instead of underline?)</li>
  </ul>
