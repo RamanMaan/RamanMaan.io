@@ -17,7 +17,7 @@ a {
 .content.container-fluid {
 	margin-right: 50px;
 	margin-top: 5vh;
-	margin-left: 3vh;
+	margin-left: 3.5vw;
 }
 
 .sidebar {
@@ -39,6 +39,10 @@ a {
 	margin: auto;
 }
 
+#nav {
+	margin-top: 2vh;
+}
+
 .page-header {
 	border-bottom: none;
 	color: #150076;
@@ -55,6 +59,14 @@ a {
 	fill: #F0F0F0;
 }
 
+body {
+	background: #EDEEEF; /* for browsers that don't support gradients*/
+	background: -webkit-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* Standard syntax */
+}
+
 @media screen and (min-width: 1000px) {
 	#main-item{
 		font-size: 80px;
@@ -66,20 +78,20 @@ a {
 
 @media screen and (max-width: 999px) and (min-width: 600px) {
 	#main-item {
-		font-size: 7.9vw;
+		font-size: 8.9vw;
 	}
 
 	.nav-items {
-		font-size: 4.0vw;
+		font-size: 5.0vw;
 	}
 }
 
 @media screen and (max-width: 599px) and (min-width: 1px) {
 	#main-item {
-		font-size: 9.5vw;
+		font-size: 10.8vw;
 	}
 
 	.nav-items {
-		font-size: 5.6vw;
+		font-size: 7.0vw;
 	}
 }
