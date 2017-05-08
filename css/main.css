@@ -66,20 +66,20 @@ a {
 
 @media screen and (max-width: 999px) and (min-width: 600px) {
 	#main-item {
-		font-size: 7.5vw;
+		font-size: 7.9vw;
 	}
 
 	.nav-items {
-		font-size: 3.6vw;
+		font-size: 4.0vw;
 	}
 }
 
 @media screen and (max-width: 599px) and (min-width: 1px) {
 	#main-item {
-		font-size: 8.5vw;
+		font-size: 9.5vw;
 	}
 
 	.nav-items {
-		font-size: 4.6vw;
+		font-size: 5.6vw;
 	}
 }
