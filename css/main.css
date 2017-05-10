@@ -1,9 +1,14 @@
 * {
 	font-family: 'Raleway', sans-serif;
+	color: grey;
 }
 
 body {
-	background: #EDEEEF;
+	background: #EDEEEF; /* for browsers that don't support gradients*/
+	background: -webkit-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* Standard syntax */
 }
 
 ul {
@@ -12,6 +17,25 @@ ul {
 
 a {
 	color: inherit;
+}
+
+a:focus, a :hover {
+	color: inherit;
+}
+
+#last-name {
+	font-weight: bold;
+}
+
+.main-item {
+	display: inline;
+	padding-right: 10px;
+}
+
+.nav-items :hover {
+	color: black;
+	font-weight: bolder;
+	text-decoration: none;
 }
 
 .content.container-fluid {
@@ -59,16 +83,8 @@ a {
 	fill: #F0F0F0;
 }
 
-body {
-	background: #EDEEEF; /* for browsers that don't support gradients*/
-	background: -webkit-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* Standard syntax */
-}
-
 @media screen and (min-width: 1000px) {
-	#main-item{
+	.main-item{
 		font-size: 80px;
 	}
 	.nav-items {
@@ -77,7 +93,7 @@ body {
 }
 
 @media screen and (max-width: 999px) and (min-width: 600px) {
-	#main-item {
+	.main-item {
 		font-size: 8.9vw;
 	}
 
@@ -87,7 +103,7 @@ body {
 }
 
 @media screen and (max-width: 599px) and (min-width: 1px) {
-	#main-item {
+	.main-item {
 		font-size: 10.8vw;
 	}
 
