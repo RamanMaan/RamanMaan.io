@@ -6,10 +6,13 @@
   //snake constants
   var canvas = $('#snake-canvas')[0];
   var context = canvas.getContext('2d');
-  var cellWidth = 15;
+  var cellWidth = 20;
   var sidebarWidth = 50;
   var foodColour = "blue";
   var snakeColour = "black";
+  var cellStrokeColour = "white";
+  var defaultSnakeLength = 5;
+  var spawnMargins = 6;
 
   //running variables
   var direction;
@@ -30,12 +33,15 @@
     createLoop();
   }
 
+  function run() {
+    paint();
+    moveSnake();
+  }
+
   function paint() {
     paintCanvas();
     paintSnake();
     paintFood();
-
-    moveSnake();
   }
 
   function paintCanvas() {
@@ -67,7 +73,7 @@
 
   function paintCell(x, y) {
     context.fillRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
-    context.strokeStyle = "white";
+    context.strokeStyle = cellStrokeColour;
     context.strokeRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
   }
 
@@ -86,41 +92,113 @@
         break;
     }
 
-    if(newX == -1 || newX >= canvas.width/cellWidth || newY == -1 || newY >= canvas.height/cellWidth || bodyCollision(newX, newY, snake)) {
-      //gameover
+    //check for game over condition
+    if( outOfBounds(newX, newY)|| bodyCollision(newX, newY, snake)) {
       init();
       return;
     }
 
-    eatFood();
-    function eatFood() {
-      if(newX == food.x && newY == food.y) {
-        var tail = {x : newX, y : newY};
-        createFood();
-        score++;
-      } else {
-        var tail = snake.pop();
-        tail.x = newX;
-        tail.y = newY;
-      }
+    eatFood(newX, newY);
+    checkControls();
+  }
 
-      snake.unshift(tail);
+
+  /* Helper functions */
+  function createSnake() {
+    snake = [];
+    direction = getRandomDirection();
+
+    var startX = getRandomPoint((canvas.width)/cellWidth - spawnMargins);
+    var startY = getRandomPoint(canvas.height/cellWidth - spawnMargins);
+
+    switch(direction) {
+      case "right":
+        createSnakeRight();
+        break;
+      case "left":
+        createSnakeLeft();
+        break;
+      case "up":
+        createSnakeUp();
+        break;
+      case "down":
+        createSnakeDown();
+        break;
     }
 
-    function bodyCollision(x, y, arr) {
-      for(var i = 0; i < arr.length; i++) {
-        if(arr[i].x == x && arr[i].y == y) {
-          return true;
-        }
+    function createSnakeRight() {
+      for(var i = defaultSnakeLength - 1; i >= 0; i--) {
+        snake.push({x : startX + i, y : startY})
       }
-      return false;
     }
+    function createSnakeLeft() {
+      for(var i = 0; i < defaultSnakeLength; i++) {
+        snake.push({x : startX + i, y : startY})
+      }
+    }
+    function createSnakeUp() {
+      for(var i = 0; i < defaultSnakeLength; i++) {
+        snake.push({x : startX, y : startY + i})
+      }
+    }
+    function createSnakeDown() {
+      for(var i = defaultSnakeLength - 1; i >= 0; i--) {
+        snake.push({x : startX, y : startY + i})
+      }
+    }
+  }
+
+  function getRandomDirection() {
+    switch(Math.floor(Math.random() * 4)) {
+      case 0: return "left";
+      case 1: return "up";
+      case 2: return "down";
+      case 3: return "right";
+    }
+  }
+
+  function createFood() {
+    food = {
+      x: getRandomPoint((canvas.width)/cellWidth),
+      y: getRandomPoint(canvas.height/cellWidth)
+    };
+  }
+
+  function createLoop() {
+    if(typeof game_loop != "undefined") {
+      clearInterval(game_loop);
+    }
+    game_loop = setInterval(run, 60);
+  }
+
+  function resizeCanvas() {
+    var w = $(window).width() - sidebarWidth;
+    var h = $(window).height();
+
+    canvas.width = w - w%cellWidth;
+    canvas.height = h - h%cellWidth;
   }
 
   function getRandomPoint(max) {
     return Math.floor(Math.random() * max);
   }
-  checkControls();
+
+  function eatFood(x, y) {
+    var tail;
+    if(x == food.x && y == food.y) {
+      //found food
+      createFood();
+      score++;
+      tail = {x : x, y : y};
+    } else {
+      tail = snake.pop();
+      tail.x = x;
+      tail.y = y;
+    }
+    //add to snake
+    snake.unshift(tail);
+  }
+
   function checkControls() {
     $(document).keydown(function(e){
       var keyPressed = e.which;
@@ -136,48 +214,17 @@
     })
   }
 
-  /* Helper functions */
-  function createSnake() {
-    var length = 3;
-    direction = getRandomDirection();
+  function outOfBounds(x, y) {
+    return x == -1 || x >= canvas.width/cellWidth || y == -1 || y >= canvas.height/cellWidth
+  }
 
-    var startX = getRandomPoint((canvas.width)/cellWidth -length);
-    var startY = getRandomPoint(canvas.height/cellWidth);
-
-    snake = [];
-    for(var i = length - 1; i >= 0; i--) {
-      snake.push({x : startX + i, y : startY})
-    }
-
-    function getRandomDirection() {
-      switch(Math.floor(Math.random() * 4)) {
-        case 0: return "left";
-        case 1: return "up";
-        case 2: return "down";
-        case 3: return "right";
+  function bodyCollision(x, y, arr) {
+    for(var i = 0; i < arr.length; i++) {
+      if(arr[i].x == x && arr[i].y == y) {
+        return true;
       }
     }
-  }
-
-  function createFood() {
-    food = {
-      x: getRandomPoint((canvas.width)/cellWidth),
-      y: getRandomPoint(canvas.height/cellWidth),
-    };
-  }
-
-  function createLoop() {
-    if(typeof game_loop != "undefined") {
-      clearInterval(game_loop);
-    }
-    game_loop = setInterval(paint, 60);
-  }
-
-  function resizeCanvas() {
-    var w = $(window).width() - sidebarWidth;
-    var h = $(window).height();
-
-    canvas.width = w - w%cellWidth;
-    canvas.height = h - h%cellWidth;
+    //else return false
+    return false;
   }
  }
