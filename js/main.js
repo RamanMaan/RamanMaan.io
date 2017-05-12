@@ -1,25 +1,30 @@
+var paused = true;
+
 $(document).ready(function(){
   $('.play').click(function() {
-    alert('yohohoho');
-  })
+    //playSnake();
+    paused = false;
+    //$('.game-area').toggleClass('invisible');
+  });
 
+  //constants
   var canvas = $('#snake-canvas')[0];
   var context = canvas.getContext('2d');
-  var w = $(window).width() - 50;
-  var h = $(window).height();
   var cellWidth = 15;
+  var sidebarWidth = 50;
+
+  //running variables
   var direction;
   var food;
   var score;
+  var snake;
 
-  var snek;
-
+  //initial housekeeping to allow canvas to resize in case window resized
+  window.addEventListener('resize', resizeCanvas, false);
+  resizeCanvas();
   init();
-  function init() {
-    window.addEventListener('resize', resizeCanvas, false);
-    resizeCanvas();
 
-    direction = defaultDirection();
+  function init() {
     score = 0;
     createSnake();
     createFood();
@@ -29,12 +34,16 @@ $(document).ready(function(){
     }
     game_loop = setInterval(paint, 60);
   }
+
   function resizeCanvas() {
+    var w = $(window).width() - sidebarWidth;
+    var h = $(window).height();
+
     canvas.width = w - w%cellWidth;
     canvas.height = h - h%cellWidth;
   }
 
-  function defaultDirection() {
+  function getRandomDirection() {
     var key = Math.floor(Math.random() * 4);
     switch(key) {
       case 0: return "left";
@@ -44,33 +53,38 @@ $(document).ready(function(){
     }
   }
 
-  createSnake();
   function createSnake() {
     var length = 3;
-    direction = defaultDirection();
+    direction = getRandomDirection();
 
     var startX = getRandomPoint((canvas.width)/cellWidth -length);
     var startY = getRandomPoint(canvas.height/cellWidth);
 
-    snek = [];
+    snake = [];
     for(var i = length - 1; i >= 0; i--) {
-      snek.push({x : startX + i, y : startY})
+      snake.push({x : startX + i, y : startY})
     }
   }
+
   function paint() {
     paintCanvas();
     paintSnake();
     paintFood();
+
+    moveSnake();
   }
 
   function paintCanvas() {
+    //clear the canvas
     context.clearRect(0,0,canvas.width,canvas.height);
+
+    //draw the border
     context.strokeStyle="black";
     context.strokeRect(0,0,canvas.width,canvas.height);
 
-    //score
+    //draw the score
     var scoreText = "Score: " + score;
-    context.font="bold 14px Raleway"
+    context.font="bold 14px Raleway";
     context.fillText(scoreText, 20, 20);
   }
 
@@ -93,8 +107,15 @@ $(document).ready(function(){
   }
 
   function paintSnake() {
-    var newX = snek[0].x;
-    var newY = snek[0].y;
+    for(var i = 0; i < snake.length; i++) {
+      var cell = snake[i];
+      paintCell(cell.x, cell.y);
+    }
+  }
+
+  function moveSnake() {
+    var newX = snake[0].x;
+    var newY = snake[0].y;
 
     switch(direction) {
       case "right": newX++;
@@ -107,25 +128,25 @@ $(document).ready(function(){
         break;
     }
 
-      if(newX == -1 || newX >= canvas.width/cellWidth || newY == -1 || newY >= canvas.height/cellWidth || bodyCollision(newX, newY, snek)) {
-        //gameover
-        init();
-        return;
-      }
+    if(newX == -1 || newX >= canvas.width/cellWidth || newY == -1 || newY >= canvas.height/cellWidth || bodyCollision(newX, newY, snake)) {
+      //gameover
+      init();
+      return;
+    }
 
     eatFood();
     function eatFood() {
       if(newX == food.x && newY == food.y) {
-        var tail = {x : newX, y : newY}
+        var tail = {x : newX, y : newY};
         createFood();
         score++;
       } else {
-        var tail = snek.pop();
+        var tail = snake.pop();
         tail.x = newX;
         tail.y = newY;
       }
 
-      snek.unshift(tail);
+      snake.unshift(tail);
     }
 
     function bodyCollision(x, y, arr) {
@@ -134,16 +155,7 @@ $(document).ready(function(){
           return true;
         }
       }
-
       return false;
-    }
-
-
-
-
-    for(var i = 0; i < snek.length; i++) {
-      var cell = snek[i];
-      paintCell(cell.x, cell.y);
     }
   }
 
@@ -166,4 +178,3 @@ $(document).ready(function(){
     })
   }
 });
-

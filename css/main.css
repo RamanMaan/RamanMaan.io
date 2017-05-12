@@ -120,9 +120,10 @@ a:focus, a :hover {
 	height: 100%;
 	top: 0;
 	position: fixed;
-	z-index: 99; /* by default should be negative */
+	z-index: -99;
 }
 
 #snake-canvas {
-
+	display: flex;
+	margin: auto;
 }
