@@ -7,4 +7,5 @@ My website/resume
  	<li>create a proper favicon</li>
  	<li>add a scroll reveal on about me</li>
  	<li>make hover over links nicer (make font bolder instead of underline?)</li>
+ 	<li>deal with existing bug where multiple instances of snake can be created</li>
  </ul>
