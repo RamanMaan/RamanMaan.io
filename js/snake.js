@@ -3,17 +3,20 @@
  */
 
  function playSnake() {
-  //constants
+  //snake constants
   var canvas = $('#snake-canvas')[0];
   var context = canvas.getContext('2d');
   var cellWidth = 15;
   var sidebarWidth = 50;
+  var foodColour = "blue";
+  var snakeColour = "black";
 
   //running variables
   var direction;
   var food;
   var score;
   var snake;
+  var game_loop;
 
   //initial housekeeping to allow canvas to resize in case window resized
   window.addEventListener('resize', resizeCanvas, false);
@@ -24,42 +27,7 @@
     score = 0;
     createSnake();
     createFood();
-
-    if(typeof game_loop != "undefined") {
-      clearInterval(game_loop);
-    }
-    game_loop = setInterval(paint, 60);
-  }
-
-  function resizeCanvas() {
-    var w = $(window).width() - sidebarWidth;
-    var h = $(window).height();
-
-    canvas.width = w - w%cellWidth;
-    canvas.height = h - h%cellWidth;
-  }
-
-  function getRandomDirection() {
-    var key = Math.floor(Math.random() * 4);
-    switch(key) {
-      case 0: return "left";
-      case 1: return "up";
-      case 2: return "down";
-      case 3: return "right";
-    }
-  }
-
-  function createSnake() {
-    var length = 3;
-    direction = getRandomDirection();
-
-    var startX = getRandomPoint((canvas.width)/cellWidth -length);
-    var startY = getRandomPoint(canvas.height/cellWidth);
-
-    snake = [];
-    for(var i = length - 1; i >= 0; i--) {
-      snake.push({x : startX + i, y : startY})
-    }
+    createLoop();
   }
 
   function paint() {
@@ -84,29 +52,23 @@
     context.fillText(scoreText, 20, 20);
   }
 
-  function createFood() {
-    food = {
-      x: getRandomPoint((canvas.width)/cellWidth - length),
-      y: getRandomPoint(canvas.height/cellWidth),
-    };
-  }
-
-  function paintCell(x, y) {
-    context.fillStyle="blue";
-    context.fillRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
-    context.strokeStyle = "white";
-    context.strokeRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
-  }
-
-  function paintFood() {
-    paintCell(food.x, food.y)
-  }
-
   function paintSnake() {
+    context.fillStyle = snakeColour;
     for(var i = 0; i < snake.length; i++) {
       var cell = snake[i];
       paintCell(cell.x, cell.y);
     }
+  }
+
+  function paintFood() {
+    context.fillStyle = foodColour;
+    paintCell(food.x, food.y)
+  }
+
+  function paintCell(x, y) {
+    context.fillRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
+    context.strokeStyle = "white";
+    context.strokeRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
   }
 
   function moveSnake() {
@@ -172,5 +134,50 @@
         direction = "down";
       }
     })
+  }
+
+  /* Helper functions */
+  function createSnake() {
+    var length = 3;
+    direction = getRandomDirection();
+
+    var startX = getRandomPoint((canvas.width)/cellWidth -length);
+    var startY = getRandomPoint(canvas.height/cellWidth);
+
+    snake = [];
+    for(var i = length - 1; i >= 0; i--) {
+      snake.push({x : startX + i, y : startY})
+    }
+
+    function getRandomDirection() {
+      switch(Math.floor(Math.random() * 4)) {
+        case 0: return "left";
+        case 1: return "up";
+        case 2: return "down";
+        case 3: return "right";
+      }
+    }
+  }
+
+  function createFood() {
+    food = {
+      x: getRandomPoint((canvas.width)/cellWidth),
+      y: getRandomPoint(canvas.height/cellWidth),
+    };
+  }
+
+  function createLoop() {
+    if(typeof game_loop != "undefined") {
+      clearInterval(game_loop);
+    }
+    game_loop = setInterval(paint, 60);
+  }
+
+  function resizeCanvas() {
+    var w = $(window).width() - sidebarWidth;
+    var h = $(window).height();
+
+    canvas.width = w - w%cellWidth;
+    canvas.height = h - h%cellWidth;
   }
  }
