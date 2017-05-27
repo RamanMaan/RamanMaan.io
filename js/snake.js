@@ -8,22 +8,41 @@ function playSnake() {
 	var _canvas = $('#snake-canvas')[0];
 	var _context = _canvas.getContext('2d');
 	var _scoreElement = $('#score');
-	var _cellWidth = 20;
-	var _spawnMargins = 6;
-	var _defaultSnakeLength = 5;
+	const _cellWidth = 20;
+	const _spawnMargins = 6;
+	const _defaultSnakeLength = 5;
 	var _gameLoop;
 
 	//colour constants
-	var _foodColour = '#150076';
-	var _snakeColour = '#1d1d1d';
-	var _cellStrokeColour = '#EDEEEF';
-	var _borderStrokeColour = '#150076';
+	const _foodColour = '#150076';
+	const _snakeColour = '#1d1d1d';
+	const _cellStrokeColour = '#EDEEEF';
+	const _borderStrokeColour = '#150076';
 
 	/* Runtime Variables */
-	var direction;
 	var food;
 	var score;
-	var snake;
+	var _Snake;
+
+	//directions manager
+	const _dir = {
+		LEFT: 'left',
+		RIGHT: 'right',
+		UP: 'up',
+		DOWN: 'down',
+		getRandom: function () {
+			switch (Math.floor(Math.random() * 4)) {
+				case 0:
+					return _dir.LEFT;
+				case 1:
+					return _dir.UP;
+				case 2:
+					return _dir.DOWN;
+				case 3:
+					return _dir.RIGHT;
+			}
+		}
+	};
 
 	//initial housekeeping to allow canvas to resize in case window resized
 	window.addEventListener('resize', resizeCanvas, false);
@@ -36,6 +55,13 @@ function playSnake() {
 		createFood();
 		createLoop();
 		paintScore();
+	}
+
+	function createLoop() {
+		if (typeof _gameLoop != 'undefined') {
+			clearInterval(_gameLoop);
+		}
+		_gameLoop = setInterval(run, 60);
 	}
 
 	function run() {
@@ -60,10 +86,14 @@ function playSnake() {
 
 	function paintSnake() {
 		_context.fillStyle = _snakeColour;
-		for (var i = 0; i < snake.length; i++) {
-			var cell = snake[i];
+		for (var i = 0; i < _Snake.length; i++) {
+			var cell = _Snake[i];
 			paintCell(cell.x, cell.y);
 		}
+	}
+
+	function paintScore() {
+		_scoreElement.text('Score: ' + score);
 	}
 
 	function paintFood() {
@@ -78,26 +108,26 @@ function playSnake() {
 	}
 
 	function moveSnake() {
-		var newX = snake[0].x;
-		var newY = snake[0].y;
+		var newX = _Snake[0].x;
+		var newY = _Snake[0].y;
 
-		switch (direction) {
-			case 'right':
+		switch (_Snake.direction) {
+			case _dir.RIGHT:
 				newX++;
 				break;
-			case 'left':
+			case _dir.LEFT:
 				newX--;
 				break;
-			case 'up':
+			case _dir.UP:
 				newY--;
 				break;
-			case 'down':
+			case _dir.DOWN:
 				newY++;
 				break;
 		}
 
 		//check for game over condition
-		if (outOfBounds(newX, newY) || bodyCollision(newX, newY, snake)) {
+		if (outOfBounds(newX, newY) || bodyCollision(newX, newY, _Snake)) {
 			init();
 			return;
 		}
@@ -109,62 +139,50 @@ function playSnake() {
 
 	/* Helper functions */
 	function createSnake() {
-		snake = [];
-		direction = getRandomDirection();
+		_Snake = [];
+
+		_Snake.direction = _dir.getRandom();
 
 		var startX = getRandomPoint((_canvas.width) / _cellWidth - _spawnMargins);
 		var startY = getRandomPoint(_canvas.height / _cellWidth - _spawnMargins);
 
-		switch (direction) {
-			case 'right':
+		switch (_Snake.direction) {
+			case _dir.RIGHT:
 				createSnakeRight();
 				break;
-			case 'left':
+			case _dir.LEFT:
 				createSnakeLeft();
 				break;
-			case 'up':
+			case _dir.UP:
 				createSnakeUp();
 				break;
-			case 'down':
+			case _dir.DOWN:
 				createSnakeDown();
 				break;
 		}
 
 		function createSnakeRight() {
 			for (var i = _defaultSnakeLength - 1; i >= 0; i--) {
-				snake.push({x: startX + i, y: startY});
+				_Snake.push({x: startX + i, y: startY});
 			}
 		}
 
 		function createSnakeLeft() {
 			for (var i = 0; i < _defaultSnakeLength; i++) {
-				snake.push({x: startX + i, y: startY});
+				_Snake.push({x: startX + i, y: startY});
 			}
 		}
 
 		function createSnakeUp() {
 			for (var i = 0; i < _defaultSnakeLength; i++) {
-				snake.push({x: startX, y: startY + i});
+				_Snake.push({x: startX, y: startY + i});
 			}
 		}
 
 		function createSnakeDown() {
 			for (var i = _defaultSnakeLength - 1; i >= 0; i--) {
-				snake.push({x: startX, y: startY + i});
+				_Snake.push({x: startX, y: startY + i});
 			}
-		}
-	}
-
-	function getRandomDirection() {
-		switch (Math.floor(Math.random() * 4)) {
-			case 0:
-				return 'left';
-			case 1:
-				return 'up';
-			case 2:
-				return 'down';
-			case 3:
-				return 'right';
 		}
 	}
 
@@ -173,13 +191,6 @@ function playSnake() {
 			x: getRandomPoint((_canvas.width) / _cellWidth),
 			y: getRandomPoint(_canvas.height / _cellWidth)
 		};
-	}
-
-	function createLoop() {
-		if (typeof _gameLoop != 'undefined') {
-			clearInterval(_gameLoop);
-		}
-		_gameLoop = setInterval(run, 60);
 	}
 
 	function resizeCanvas() {
@@ -203,29 +214,25 @@ function playSnake() {
 			paintScore();
 			tail = {x: x, y: y};
 		} else {
-			tail = snake.pop();
+			tail = _Snake.pop();
 			tail.x = x;
 			tail.y = y;
 		}
 		//add to snake
-		snake.unshift(tail);
-
-		function paintScore() {
-			_scoreElement.text('Score: ' + score);
-		}
+		_Snake.unshift(tail);
 	}
 
 	function checkControls() {
 		$(document).keydown(function (e) {
 			var keyPressed = e.which;
-			if ((keyPressed == '37' || keyPressed == '65') && direction != 'right') {
-				direction = 'left';
-			} else if ((keyPressed == '38' || keyPressed == '87') && direction != 'down') {
-				direction = 'up';
-			} else if ((keyPressed == '39' || keyPressed == '68') && direction != 'left') {
-				direction = 'right';
-			} else if ((keyPressed == '40' || keyPressed == '83') && direction != 'up') {
-				direction = 'down';
+			if ((keyPressed == '37' || keyPressed == '65') && _Snake.direction != _dir.RIGHT) {
+				_Snake.direction = _dir.LEFT;
+			} else if ((keyPressed == '38' || keyPressed == '87') && _Snake.direction != _dir.DOWN) {
+				_Snake.direction = _dir.UP;
+			} else if ((keyPressed == '39' || keyPressed == '68') && _Snake.direction != _dir.LEFT) {
+				_Snake.direction = _dir.RIGHT;
+			} else if ((keyPressed == '40' || keyPressed == '83') && _Snake.direction != _dir.UP) {
+				_Snake.direction = _dir.DOWN;
 			}
 		});
 	}
