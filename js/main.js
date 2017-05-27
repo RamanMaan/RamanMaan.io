@@ -2,6 +2,7 @@ $(document).ready(function(){
   $('.play').click(function() {
     //swap play button and header text depending on game state
     flipPlayElements();
+    $('#score').toggleClass('hidden')
 
     //handle the snake canvas
     if($('#snake-canvas').length) {
