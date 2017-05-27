@@ -19,43 +19,55 @@
 </head>
 
 <body>
-<div class="content container-fluid">
+<div id="container" class="content container-fluid can-blur">
 	<div class="row">
 		<div class="content col-xs-12">
 			<div class="page-header">
-				<h1 id="main-item">Raman <b>Maan</b></h1>
+				<h1 class="main-item">Raman</h1>
+				<h1 class="main-item bold">Maan</h1>
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
 			<ul id="nav">
-				<li class = "nav-items" id="play">Play!</li>
-				<li class = "nav-items" id="portfolio"><a href="https://github.com/Raman-Maan">Portfolio</a></li>
-				<li class = "nav-items" id="me">Me</li>
+				<li class = "nav-items">
+					<a class= "nav-link play" id="play">Play</a>
+				</li>
+				<li class = "nav-items" id="portfolio">
+					<a class= "nav-link" href="https://github.com/Raman-Maan">Portfolio</a>
+				</li>
+				<li class = "nav-items" id="me">
+					<a class= "nav-link" href="javascript:comingSoon()">About Me</a>
+				</li>
 			</ul>
 		</div>
 	</div>
-</div><!--close container-->
+</div><!-- close container -->
+
 <div class="sidebar vertical-align">
 	<ul class="nav-sidebar">
 		<!--TODO: find better icons to use-->
 		<li>
 			<a href="https://github.com/Raman-Maan">
-				<img src="images/github.svg" alt="GitHub" class="icon svg" id="side-git">
+				<img src="images/github.png" alt="GitHub" class="icon" id="side-git">
 			</a>
 		</li>
 		<li>
-			<a href="#">
-				<img src="images/play.svg" alt="Play" class="icon svg" id="side-play">
+			<a>
+				<img src="images/play.png" alt="Play" class="icon play" id="side-play">
 			</a>
 		</li>
 		<li>
-			<a href="#">
-				<img src="images/contact.svg" alt="Me" class="icon svg" id="side-me">
+			<a href="javascript:comingSoon()">
+				<img src="images/contact.png" alt="Me" class="icon" id="side-me">
 			</a>
 		</li>
 	</ul>
+</div><!-- close sidebar -->
+
+<div id="game-area">
+  <h3 class="hidden nav-items" id="score">Score: 0</h3>
 </div>
 <!-- jQuery -->
 <script src="js/jQuery/jquery-3.2.1.min.js"></script>
@@ -63,5 +75,6 @@
 <script src="js/Bootstrap/bootstrap.min.js"></script>
 <!-- Custom JS -->
 <script src="js/main.js"></script>
+<script src="js/snake.js"></script>
 </body>
 </html>
