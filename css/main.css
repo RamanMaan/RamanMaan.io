@@ -5,10 +5,10 @@
 
 body {
 	background: #EDEEEF; /* for browsers that don't support gradients*/
-	background: -webkit-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#EDEEEF, #EFEFEF, #EDEEEF); /* Standard syntax */
+	background: -webkit-linear-gradient(#EDEEEF, #e8e8e8, #EDEEEF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#EDEEEF, #e8e8e8, #EDEEEF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#EDEEEF, #e8e8e8, #EDEEEF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#EDEEEF, #e8e8e8, #EDEEEF); /* Standard syntax */
 
 	overflow: hidden;
 }
@@ -17,21 +17,58 @@ ul {
 	list-style-type: none;
 }
 
-a {
-	color: inherit;
+a.nav-link {
+    color: grey;
+    position: relative;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
 }
 
-a:focus, a :hover {
-	color: inherit;
+a.nav-link:focus {
+    color: inherit;
+    text-decoration: none;
 }
 
-#last-name {
-	font-weight: bold;
+a.nav-link:hover {
+    color: black;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+/* Underline animation on navigation list */
+a.nav-link:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+a.nav-link:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.page-header {
+    border-bottom: none;
+    color: #150076;
 }
 
 .main-item {
 	display: inline;
 	padding-right: 10px;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .nav-items :hover {
@@ -67,11 +104,6 @@ a:focus, a :hover {
 
 #nav {
 	margin-top: 2vh;
-}
-
-.page-header {
-	border-bottom: none;
-	color: #150076;
 }
 
 .vertical-align {
