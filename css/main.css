@@ -113,6 +113,26 @@ a.nav-link:hover:before {
     filter: contrast(70%) invert(100%);
 }
 
+.can-blur {
+	-webkit-filter: none;
+	filter: none;
+
+	-webkit-transition: 300ms -webkit-filter;
+	-moz-transition: 300ms -moz-filter;
+	-o-transition: 300ms -o-filter;
+	transition: 300ms filter;
+}
+
+.blur {
+	-webkit-filter: blur(6px) contrast(0%);
+	filter: blur(6px) contrast(0%);
+
+	-webkit-transition: 500ms -webkit-filter linear;
+	-moz-transition: 500ms -moz-filter linear;
+	-o-transition: 500ms -o-filter linear;
+	transition: 500ms filter linear;
+}
+
 @media screen and (min-width: 1000px) {
 	.main-item{
 		font-size: 80px;
