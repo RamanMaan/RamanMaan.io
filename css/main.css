@@ -4,11 +4,7 @@
 }
 
 body {
-	background: #EDEEEF; /* for browsers that don't support gradients*/
-	background: -webkit-linear-gradient(#EDEEEF, #e8e8e8, #EDEEEF); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#EDEEEF, #e8e8e8, #EDEEEF); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#EDEEEF, #e8e8e8, #EDEEEF); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#EDEEEF, #e8e8e8, #EDEEEF); /* Standard syntax */
+	background: #EDEEEF;
 
 	overflow: hidden;
 }
