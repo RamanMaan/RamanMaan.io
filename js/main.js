@@ -23,3 +23,7 @@ function flipPlayElements() {
   var src = $('#side-play').attr('src') === 'images/play.png' ? 'images/cancel.png' : 'images/play.png';
   $('#side-play').attr('src', src);
 }
+
+function comingSoon() {
+  alert("Coming soon!");
+}
