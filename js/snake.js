@@ -15,9 +15,8 @@ function playSnake() {
 
 	//colour constants
 	const _foodColour = '#150076';
-	const _snakeColour = '#1d1d1d';
-	const _cellStrokeColour = '#EDEEEF';
-	const _borderStrokeColour = '#150076';
+	const _snakeColour = '#171717';
+	const _cellStrokeColour = '#909192';
 
 	/* Runtime Variables */
 	var food;
@@ -78,10 +77,6 @@ function playSnake() {
 	function paintCanvas() {
 		//clear the canvas
 		_context.clearRect(0, 0, _canvas.width, _canvas.height);
-
-		//draw the border
-		_context.strokeStyle = _borderStrokeColour;
-		_context.strokeRect(0, 0, _canvas.width, _canvas.height);
 	}
 
 	function paintSnake() {

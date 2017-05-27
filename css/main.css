@@ -170,6 +170,9 @@ a.nav-link:hover:before {
 #snake-canvas {
 	display: flex;
 	margin: auto;
+
+	-webkit-box-shadow:inset 0px 0px 0px 3px #a2152e;
+	-moz-box-shadow:inset 0px 0px 0px 3px #a2152e;
 }
 
 #score {
