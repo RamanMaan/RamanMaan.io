@@ -6,6 +6,7 @@
   //snake constants
   var canvas = $('#snake-canvas')[0];
   var context = canvas.getContext('2d');
+  var scoreElement = $('#score')
   var cellWidth = 20;
   var sidebarWidth = 50;
   var foodColour = "blue";
@@ -49,13 +50,8 @@
     context.clearRect(0,0,canvas.width,canvas.height);
 
     //draw the border
-    context.strokeStyle="black";
+    context.strokeStyle="#150076";
     context.strokeRect(0,0,canvas.width,canvas.height);
-
-    //draw the score
-    var scoreText = "Score: " + score;
-    context.font="bold 14px Raleway";
-    context.fillText(scoreText, 20, 20);
   }
 
   function paintSnake() {
@@ -189,6 +185,7 @@
       //found food
       createFood();
       score++;
+      paintScore();
       tail = {x : x, y : y};
     } else {
       tail = snake.pop();
@@ -197,6 +194,10 @@
     }
     //add to snake
     snake.unshift(tail);
+
+    function paintScore() {
+      scoreElement.text("Score: " + score);
+    }
   }
 
   function checkControls() {

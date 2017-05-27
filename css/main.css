@@ -71,12 +71,6 @@ a.nav-link:hover:before {
     font-weight: bold;
 }
 
-.nav-items :hover {
-	color: black;
-	font-weight: bolder;
-	text-decoration: none;
-}
-
 .content.container-fluid {
 	margin-right: 50px;
 	margin-top: 5vh;
@@ -160,4 +154,14 @@ a.nav-link:hover:before {
 #snake-canvas {
 	display: flex;
 	margin: auto;
+}
+
+#score {
+    margin: 20px;
+    color: #150076;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: bold;
 }
