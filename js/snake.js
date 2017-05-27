@@ -9,9 +9,10 @@
   var scoreElement = $('#score')
   var cellWidth = 20;
   var sidebarWidth = 50;
-  var foodColour = "blue";
-  var snakeColour = "black";
-  var cellStrokeColour = "white";
+  var foodColour = "#150076";
+  var snakeColour = "#1d1d1d";
+  var cellStrokeColour = "#EDEEEF";
+  var borderStrokeColour = "#150076";
   var defaultSnakeLength = 5;
   var spawnMargins = 6;
 
@@ -50,7 +51,7 @@
     context.clearRect(0,0,canvas.width,canvas.height);
 
     //draw the border
-    context.strokeStyle="#150076";
+    context.strokeStyle = borderStrokeColour;
     context.strokeRect(0,0,canvas.width,canvas.height);
   }
 
