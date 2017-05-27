@@ -202,7 +202,7 @@ function playSnake() {
 
 	function eatFood(x, y) {
 		var tail;
-		if (x == food.x && y == food.y) {
+		if (x === food.x && y === food.y) {
 			//found food
 			createFood();
 			score++;
@@ -220,25 +220,25 @@ function playSnake() {
 	function checkControls() {
 		$(document).keydown(function (e) {
 			var keyPressed = e.which;
-			if ((keyPressed == '37' || keyPressed == '65') && _Snake.direction != _dir.RIGHT) {
+			if ((keyPressed == '37' || keyPressed == '65') && _Snake.direction !== _dir.RIGHT) {
 				_Snake.direction = _dir.LEFT;
-			} else if ((keyPressed == '38' || keyPressed == '87') && _Snake.direction != _dir.DOWN) {
+			} else if ((keyPressed == '38' || keyPressed == '87') && _Snake.direction !== _dir.DOWN) {
 				_Snake.direction = _dir.UP;
-			} else if ((keyPressed == '39' || keyPressed == '68') && _Snake.direction != _dir.LEFT) {
+			} else if ((keyPressed == '39' || keyPressed == '68') && _Snake.direction !== _dir.LEFT) {
 				_Snake.direction = _dir.RIGHT;
-			} else if ((keyPressed == '40' || keyPressed == '83') && _Snake.direction != _dir.UP) {
+			} else if ((keyPressed == '40' || keyPressed == '83') && _Snake.direction !== _dir.UP) {
 				_Snake.direction = _dir.DOWN;
 			}
 		});
 	}
 
 	function outOfBounds(x, y) {
-		return x == -1 || x >= _canvas.width / _cellWidth || y == -1 || y >= _canvas.height / _cellWidth;
+		return x === -1 || x >= _canvas.width / _cellWidth || y === -1 || y >= _canvas.height / _cellWidth;
 	}
 
 	function bodyCollision(x, y, arr) {
 		for (var i = 0; i < arr.length; i++) {
-			if (arr[i].x == x && arr[i].y == y) {
+			if (arr[i].x === x && arr[i].y === y) {
 				return true;
 			}
 		}
