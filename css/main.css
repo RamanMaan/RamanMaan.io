@@ -4,7 +4,14 @@
 }
 
 body {
-	background: #EDEEEF;
+	background: #EDEEEF; /* For browsers that do not support gradients */
+  	background: -webkit-radial-gradient(45%, closest-side, #F1F1F1 60%, #EDEEEF, #EAEAEA); /* Safari 5.1 to 6.0 */
+  	background: -o-radial-gradient(45%, closest-side, #F1F1F1 60%, #EDEEEF, #EAEAEA); /* For Opera 11.6 to 12.0 */
+  	background: -moz-radial-gradient(45%, closest-side, #F1F1F1 60%, #EDEEEF, #EAEAEA); /* For Firefox 3.6 to 15 */
+  	background: radial-gradient(closest-side at 45%, #F1F1F1 20%, #EDEEEF 30%, #EAEAEA 95%); /* Standard syntax */
+
+	background-repeat:no-repeat;
+	background-attachment: fixed;
 
 	overflow: hidden;
 }
