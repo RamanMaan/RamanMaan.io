@@ -6,11 +6,10 @@ $(document).ready(function () {
 		//handle the snake canvas
 		if ($('#snake-canvas').length) {
 			//already exists, so we should end game
-			$('#snake-canvas').remove();
+			$('#snake-canvas').fadeRemove(200);
 		} else {
 			//we should create the snake game canvas
-			var canvas = document.createElement('canvas');
-			$('#game-area').append('<canvas id="snake-canvas"></canvas>');
+			$('<canvas id="snake-canvas"></canvas>').hide().appendTo('#game-area').fadeIn(300);
 			playSnake();
 		}
 	});
@@ -34,4 +33,10 @@ function setPlayArea() {
 
 function comingSoon() {
 	alert('Coming soon!');
+}
+
+jQuery.fn.fadeRemove = function(speed) {
+	$(this).fadeOut(speed, function() {
+		$(this).remove();
+	})
 }

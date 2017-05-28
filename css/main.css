@@ -120,20 +120,20 @@ a.nav-link:hover:before {
 	-webkit-filter: none;
 	filter: none;
 
-	-webkit-transition: 300ms -webkit-filter;
-	-moz-transition: 300ms -moz-filter;
-	-o-transition: 300ms -o-filter;
-	transition: 300ms filter;
+	-webkit-transition: 200ms -webkit-filter;
+	-moz-transition: 200ms -moz-filter;
+	-o-transition: 200ms -o-filter;
+	transition: 200ms filter;
 }
 
 .blur {
 	-webkit-filter: blur(6px) contrast(0%);
 	filter: blur(6px) contrast(0%);
 
-	-webkit-transition: 500ms -webkit-filter linear;
-	-moz-transition: 500ms -moz-filter linear;
-	-o-transition: 500ms -o-filter linear;
-	transition: 500ms filter linear;
+	-webkit-transition: 200ms -webkit-filter;
+	-moz-transition: 200ms -moz-filter;
+	-o-transition: 200ms -o-filter;
+	transition: 200ms filter;
 }
 
 @media screen and (min-width: 1000px) {
