@@ -18,10 +18,12 @@ Thumbs.db
 # Non-minified #
 ################
 js/Bootstrap/bootstrap.js
+js/jQuery/jquery-3.2.1.js
 css/Bootstrap/bootstrap.css
 css/Bootstrap/bootstrap.css.map
 
 ###########################
 # Project Scratch Folders #
 ###########################
-assets/photoshop/*
+*.psd
+*.temporary
