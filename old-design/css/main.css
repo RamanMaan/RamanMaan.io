@@ -1,23 +1,23 @@
 * {
-	font-family: 'Raleway', sans-serif;
-	color: grey;
+    font-family: 'Raleway', sans-serif;
+    color: grey;
 }
 
 body {
-	background: #EDEEEF; /* For browsers that do not support gradients */
-  	background: -webkit-radial-gradient(45%, closest-side, #F1F1F1 60%, #EDEEEF, #EAEAEA); /* Safari 5.1 to 6.0 */
-  	background: -o-radial-gradient(45%, closest-side, #F1F1F1 60%, #EDEEEF, #EAEAEA); /* For Opera 11.6 to 12.0 */
-  	background: -moz-radial-gradient(45%, closest-side, #F1F1F1 60%, #EDEEEF, #EAEAEA); /* For Firefox 3.6 to 15 */
-  	background: radial-gradient(closest-side at 45%, #F1F1F1 20%, #EDEEEF 30%, #EAEAEA 95%); /* Standard syntax */
+    background: #EDEEEF; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(45%, closest-side, #FFFFFF 60%, #FAFAFA, #DDDDDD); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(45%, closest-side, #FFFFFF 60%, #FAFAFA, #DDDDDD); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(45%, closest-side, #FFFFFF 60%, #FAFAFA, #DDDDDD); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(closest-side at 45%, #FFFFFF 20%, #FAFAFA 30%, #DDDDDD 95%); /* Standard syntax */
 
-	background-repeat:no-repeat;
-	background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-	overflow: hidden;
+    overflow: hidden;
 }
 
 ul {
-	list-style-type: none;
+    list-style-type: none;
 }
 
 a.nav-link {
@@ -66,8 +66,8 @@ a.nav-link:hover:before {
 }
 
 .main-item {
-	display: inline;
-	padding-right: 10px;
+    display: inline;
+    padding-right: 10px;
 }
 
 .bold {
@@ -75,111 +75,113 @@ a.nav-link:hover:before {
 }
 
 .content.container-fluid {
-	margin-right: 50px;
-	margin-top: 5vh;
-	margin-left: 3.5vw;
+    margin-right: 50px;
+    margin-top: 5vh;
+    margin-left: 3.5vw;
 }
 
 .sidebar {
-	background: #171717;
-	position: fixed;
-	top: 0;
-	right: 0;
-	height: 100%;
-	width: 50px;
-	z-index: 10;
-	padding-top: 10px;
-	padding-left: 3px;
-	padding-right: 3px;
+    background: #171717;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    z-index: 10;
+    padding-top: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .nav-sidebar {
-	z-index: 11;
-	padding: 0;
-	margin: auto;
+    z-index: 11;
+    padding: 0;
+    margin: auto;
 }
 
 #nav {
-	margin-top: 2vh;
+    margin-top: 2vh;
 }
 
 .vertical-align {
-	display: flex;
+    display: flex;
 }
 
 .icon {
-	height: 100%;
-	width: 100%;
-	padding-top: 50%;
+    height: 100%;
+    width: 100%;
+    padding-top: 50%;
 
     -webkit-filter: contrast(70%) invert(100%);
     filter: contrast(70%) invert(100%);
 }
 
 .can-blur {
-	-webkit-filter: none;
-	filter: none;
+    -webkit-filter: none;
+    filter: none;
 
-	-webkit-transition: 200ms -webkit-filter;
-	-moz-transition: 200ms -moz-filter;
-	-o-transition: 200ms -o-filter;
-	transition: 200ms filter;
+    -webkit-transition: 200ms -webkit-filter;
+    -moz-transition: 200ms -moz-filter;
+    -o-transition: 200ms -o-filter;
+    transition: 200ms filter;
 }
 
 .blur {
-	-webkit-filter: blur(6px) contrast(0%);
-	filter: blur(6px) contrast(0%);
+    -webkit-filter: blur(6px) contrast(0%);
+    filter: blur(6px) contrast(0%);
 
-	-webkit-transition: 200ms -webkit-filter;
-	-moz-transition: 200ms -moz-filter;
-	-o-transition: 200ms -o-filter;
-	transition: 200ms filter;
+    -webkit-transition: 200ms -webkit-filter;
+    -moz-transition: 200ms -moz-filter;
+    -o-transition: 200ms -o-filter;
+    transition: 200ms filter;
 }
 
 @media screen and (min-width: 1000px) {
-	.main-item{
-		font-size: 80px;
-	}
-	.nav-items {
-		font-size: 40px;
-	}
+    .main-item {
+        font-size: 80px;
+    }
+
+    .nav-items {
+        font-size: 40px;
+    }
 }
 
 @media screen and (max-width: 999px) and (min-width: 600px) {
-	.main-item {
-		font-size: 8.9vw;
-	}
+    .main-item {
+        font-size: 8.9vw;
+    }
 
-	.nav-items {
-		font-size: 5.0vw;
-	}
+    .nav-items {
+        font-size: 5.0vw;
+    }
 }
 
 @media screen and (max-width: 599px) and (min-width: 1px) {
-	.main-item {
-		font-size: 10.8vw;
-	}
+    .main-item {
+        font-size: 10.8vw;
+    }
 
-	.nav-items {
-		font-size: 7.0vw;
-	}
+    .nav-items {
+        font-size: 7.0vw;
+    }
 }
+
 /* Snake CSS */
 #game-area {
-	margin-right: 50px;
-	width: calc(100% - 50px);
-	height: 100%;
-	top: 0;
-	position: fixed;
-	z-index: -99;
+    margin-right: 50px;
+    width: calc(100% - 50px);
+    height: 100%;
+    top: 0;
+    position: fixed;
+    z-index: -99;
 }
 
 #snake-canvas {
-	display: flex;
-	margin: auto;
+    display: flex;
+    margin: auto;
 
-	-webkit-box-shadow:inset 0px 0px 0px 3px #a2152e;
-	-moz-box-shadow:inset 0px 0px 0px 3px #a2152e;
+    -webkit-box-shadow: inset 0px 0px 0px 3px #a2152e;
+    -moz-box-shadow: inset 0px 0px 0px 3px #a2152e;
 }
 
 #score {
