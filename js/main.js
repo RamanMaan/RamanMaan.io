@@ -35,8 +35,8 @@ function comingSoon() {
 	alert('Coming soon!');
 }
 
-jQuery.fn.fadeRemove = function(speed) {
-	$(this).fadeOut(speed, function() {
+jQuery.fn.fadeRemove = function (speed) {
+	$(this).fadeOut(speed, function () {
 		$(this).remove();
-	})
-}
+	});
+};
