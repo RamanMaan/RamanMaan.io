@@ -1,5 +1,4 @@
-$(document).ready( function () {
-	clearPreloader();
+$(document).ready(function () {
 	// begin the typing animation
 	typeHeader();
 });
@@ -11,6 +10,8 @@ function typeHeader() {
 		startDelay: 3000,
 		backSpeed: 0.5,
 		backDelay: 650,
-		showCursor: false
+		showCursor: true
 	});
+
+	$('.typed-cursor').addClass('h1');
 }

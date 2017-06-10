@@ -1,6 +1,17 @@
 // Global Variables
-$primary-color: #0e5536;
+$font: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$title-font-color: #e8e8e8;
+$subtitle-font-color: #f8f8f8;
+
+$body-font-size: 13px;
+$body-font-color: white;
+
+$jumbotron-background-color: rgba(171, 171, 171, 0.33);
+
+$primary-color: #150076;
 $secondary-color: #478891;
 $highlight-bright-color: #52f8ab;
-$background-dark-color: #1e272c;
-$background-lighter-color: #303e43;
+
+$background-color: #1e272c;
+$background: $background-color url(/Raman-Maan.github.io/images/landing-background2.png) no-repeat center center fixed;

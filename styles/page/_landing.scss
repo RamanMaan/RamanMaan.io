@@ -1,0 +1,27 @@
+/******************************************
+ * Start Landing Page CSS
+ ******************************************/
+@import '../base/variables';
+@import '../animation/underline';
+
+html {
+  background: $background;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  font-family: $font;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/******************************************
+ * End Landing Page CSS
+ ******************************************/

@@ -1,0 +1,48 @@
+/******************************************
+ * Header Start
+ ******************************************/
+@import '../base/variables';
+@import '../animation/underline';
+@import '../base/mixins';
+
+.jumbotron {
+  background-color: $jumbotron-background-color;
+}
+
+#typed-header {
+  color: $title-font-color;
+  display: inline-block;
+}
+
+#typed-header strong {
+  font-weight: 700;
+  color: lighten($title-font-color, 50%);
+}
+
+// the text that prints before title
+#typed-header small {
+  color: $subtitle-font-color;
+}
+
+// the blinking cursor
+.typed-cursor {
+  color: $title-font-color !important;
+  opacity: 1;
+  @include animation(blink, 1s, ease);
+}
+
+@include keyframes(blink) {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/******************************************
+ * Header End
+ ******************************************/
