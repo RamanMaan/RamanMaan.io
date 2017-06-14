@@ -3,18 +3,10 @@
  ******************************************/
 @import '../base/variables';
 @import '../animation/underline';
-
-html {
-  background: $background;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+@import 'particles';
 
 body {
   font-family: $font;
-  background-color: transparent;
   overflow: hidden;
 }
 
