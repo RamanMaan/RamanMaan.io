@@ -8,6 +8,7 @@ Best viewed on Google Chrome
 
 ### Some of the cool things I used:
 - jQuery
-- [Bootstrap](http://getbootstrap.com/)
-- [Typed.js](https://github.com/mattboldt/typed.js/)
+- [Twitter Bootstrap](http://getbootstrap.com/)
 - [Sass](http://sass-lang.com/)
+- [Typed.js](https://github.com/mattboldt/typed.js/)
+- [particles.js](https://github.com/VincentGarreau/particles.js/)
