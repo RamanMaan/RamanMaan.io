@@ -2,12 +2,16 @@
  * Start Landing Page CSS
  ******************************************/
 @import '../base/variables';
+@import '../base/mixins';
 @import '../animation/underline';
 @import 'particles';
 
 body {
   font-family: $font;
   overflow: hidden;
+  @include background-radial-gradient($background-secondary-color, $background-color);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 ul {
