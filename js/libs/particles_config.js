@@ -1,14 +1,14 @@
 particlesJS('particles-js', {
 	'particles': {
 		'number': {
-			'value': 80,
+			'value': 100,
 			'density': {
 				'enable': true,
 				'value_area': 800
 			}
 		},
 		'color': {
-			'value': '#ffffff'
+			'value': '#b1b1b1'
 		},
 		'shape': {
 			'type': 'circle',
@@ -26,44 +26,44 @@ particlesJS('particles-js', {
 			}
 		},
 		'opacity': {
-			'value': 0.5,
-			'random': false,
+			'value': 1,
+			'random': true,
 			'anim': {
-				'enable': false,
+				'enable': true,
 				'speed': 1,
-				'opacity_min': 0.1,
+				'opacity_min': 0,
 				'sync': false
 			}
 		},
 		'size': {
-			'value': 10,
+			'value': 2,
 			'random': true,
 			'anim': {
-				'enable': false,
-				'speed': 80,
-				'size_min': 0.1,
+				'enable': true,
+				'speed': 5,
+				'size_min': 1,
 				'sync': false
 			}
 		},
 		'line_linked': {
 			'enable': true,
-			'distance': 300,
-			'color': '#ffffff',
-			'opacity': 0.4,
-			'width': 2
+			'distance': 150,
+			'color': '#666666',
+			'opacity': 0.25,
+			'width': 1
 		},
 		'move': {
 			'enable': true,
-			'speed': 12,
+			'speed': 2,
 			'direction': 'none',
-			'random': false,
+			'random': true,
 			'straight': false,
-			'out_mode': 'out',
+			'out_mode': 'bounce',
 			'bounce': false,
 			'attract': {
 				'enable': false,
 				'rotateX': 600,
-				'rotateY': 1200
+				'rotateY': 600
 			}
 		}
 	},
@@ -71,8 +71,8 @@ particlesJS('particles-js', {
 		'detect_on': 'canvas',
 		'events': {
 			'onhover': {
-				'enable': false,
-				'mode': 'repulse'
+				'enable': true,
+				'mode': 'grab'
 			},
 			'onclick': {
 				'enable': true,
@@ -82,7 +82,7 @@ particlesJS('particles-js', {
 		},
 		'modes': {
 			'grab': {
-				'distance': 800,
+				'distance': 120,
 				'line_linked': {
 					'opacity': 1
 				}
@@ -95,11 +95,11 @@ particlesJS('particles-js', {
 				'speed': 3
 			},
 			'repulse': {
-				'distance': 400,
+				'distance': 160,
 				'duration': 0.4
 			},
 			'push': {
-				'particles_nb': 4
+				'particles_nb': 5
 			},
 			'remove': {
 				'particles_nb': 2
