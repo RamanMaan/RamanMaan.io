@@ -318,16 +318,12 @@ canvas {
 body {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden;
-  background: #214049;
+  background-color: #20343b;
   /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #214049 0%, #56737f 100%, #214049 100%);
-  /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, #214049 0%, #56737f 100%, #214049 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center, #214049 0%, #56737f 100%, #214049 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#214049', endColorstr='#214049',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */
+  background-image: -moz-radial-gradient(center, ellipse cover, #214049 0%, #colour2 100%, #214049 100%);
+  background-image: -webkit-radial-gradient(center, ellipse cover, #214049 0%, #colour2 100%, #214049 100%);
+  background-image: radial-gradient(ellipse at center, #214049 0%, #1e272c 100%, #214049 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#214049', EndColorStr='#1e272c')";
   background-repeat: no-repeat;
   background-attachment: fixed; }
 

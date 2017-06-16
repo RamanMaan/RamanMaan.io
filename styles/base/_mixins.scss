@@ -34,9 +34,9 @@
 }
 
 @mixin background-radial-gradient($colour1, $colour2) {
-  background: #214049; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #214049 0%, #56737f 100%, #214049 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, #214049 0%,#56737f 100%,#214049 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center, #214049 0%,#56737f 100%,#214049 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#214049', endColorstr='#214049',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-color: mix($colour1, $colour2); /* Old browsers */
+  background-image: -moz-radial-gradient(center, ellipse cover, $colour1 0%, #colour2 100%, $colour1 100%);
+  background-image: -webkit-radial-gradient(center, ellipse cover, $colour1 0%, #colour2 100%, $colour1 100%);
+  background-image: radial-gradient(ellipse at center, $colour1 0%, $colour2 100%, $colour1 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$colour1}', EndColorStr='#{$colour2}')";
 }
