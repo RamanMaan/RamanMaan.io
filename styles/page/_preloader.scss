@@ -1,5 +1,5 @@
 /******************************************
- * Start Preloader
+ * Preloader CSS
  ******************************************/
 @import '../base/variables';
 @import '../base/mixins';
@@ -86,7 +86,3 @@ $preloader-size: 200px;
     @include rotate(-360deg);
   }
 }
-
-/******************************************
- * End Preloader
- ******************************************/
