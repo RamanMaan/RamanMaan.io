@@ -1,79 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<meta name="author" content="Raman Maan">
-	<meta name="description" content="Raman Maan's Personal Website">
-	<title>Raman Maan</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="author" content="Raman Maan">
+  <meta name="description" content="Raman Maan's Personal Website">
+  <title>Raman Maan</title>
 
   <link rel="icon" type="image/png" href="favicon.ico">
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="css/Bootstrap/bootstrap.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/libs/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+  <!-- jQuery -->
+  <script src="js/libs/jquery-3.2.1.min.js"></script>
+  <!-- Preloader -->
+  <script src="js/preloader.js"></script>
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-<div id="container" class="content container-fluid can-blur">
-  <div class="row">
-    <div class="content col-xs-12">
-      <div class="page-header">
-        <h1 class="main-item">Raman</h1>
-        <h1 class="main-item bold">Maan</h1>
+<!-- Preloader -->
+<div id="preloader-wrapper">
+  <div id="preloader"></div>
+</div>
+
+<div id="particles-js"></div>
+
+<!-- Typed Header Jumbotron -->
+<div class="jumbotron text-center">
+  <h1 id="typed-header"></h1>
+</div>
+
+<!-- Open Container -->
+<div class="container vertical-align-container">
+  <div class="vertical-align">
+
+    <div class="col-xs-4">
+      <a href="https://github.com/Raman-Maan/">
+        <img class="center-block icon" src="images/github.png">
+        <h2 class="nav-link h2 center-block text-center" >Github</h2>
+      </a>
+    </div>
+    <div class="col-xs-4">
+      <a data-toggle="modal" data-target="#aboutme">
+        <img class="center-block icon" src="images/aboutme.png">
+        <h2 class="nav-link h2 center-block text-center" >About Me</h2>
+      </a>
+    </div>
+    <div class="col-xs-4">
+      <a href="https://codepen.io/ramanmaan/">
+        <img class="center-block icon" src="images/codepen.png">
+        <h2 class="nav-link h2 center-block text-center" >CodePen</h2>
+      </a>
+    </div>
+  </div>
+  <div class="modal fade" id="aboutme" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title text-center">About Me</h3>
+        </div>
+        <div class="modal-body">
+          <p>Hey there!<br> I'm Raman, but you knew that already.</p>
+          <p>Welcome to my website! This is what I would consider the 2.0 version of my website, and is by far a considerable improvement over the previous version. If you're
+            curious and want to take a look to see how much I've improved, that's available here: <a class="" href=old-design/ugly.html>WARNING: UGLY</a></p>
+          <p>Considering this is "About Me", you're probably hoping to learn a few things about me! So I suppose I should get to that.</p>
+          <li>I love music. I love listening to music, talking about music, and sharing music. Here's a little playlist I made with some songs I've been listening to recently!</li>
+          <br>
+          <iframe class="center-block" src="https://open.spotify.com/embed/user/ramanmaan/playlist/7stKXuQfPAhgZN8hhlHir5" width="350" height="350" frameborder="0"
+                  allowtransparency="true"></iframe>
+          <br>
+          <li>I like camping sometimes too I guess, idk, bugs are gross but late night fires and smores are a recipe for a perfect evening!</li>
+          <li>TV I might watch you ask? Well, I'm very excited for Game of Thrones to start up again this summer! Some of my favourite shows include Arrested Development,
+            Breaking Bad, and idk I guess that's it lol.</li>
+          <img class="center-block img-responsive" src="http://68.media.tumblr.com/7923171986f3984c7dd7d1f080edf62d/tumblr_o8j495GUq71qk2t5co1_1280.jpg"></img>
+          <li>Dank memes</li>
+          <li>Well... seeing how small this section is you might think to yourself, this guy is pretty boring! Well, you'd probably be right, but how can you know for sure
+            without interviewing me? ;)</li>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary center-block" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <ul id="nav">
-        <li class="nav-items">
-          <a class="nav-link play" id="play">Play</a>
-        </li>
-        <li class="nav-items" id="portfolio">
-          <a class="nav-link" href="https://github.com/Raman-Maan">Portfolio</a>
-        </li>
-        <li class="nav-items" id="me">
-          <a class="nav-link" href="javascript:comingSoon()">About Me</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div><!-- close container -->
+</div> <!-- Close Container -->
 
-<div class="sidebar vertical-align">
-  <ul class="nav-sidebar">
-    <li>
-      <a href="https://github.com/Raman-Maan">
-        <img src="images/github.png" alt="GitHub Icon" class="icon" id="side-git">
-      </a>
-    </li>
-    <li>
-      <a>
-        <img src="images/play.png" alt="Play Icon" class="icon play" id="side-play">
-      </a>
-    </li>
-    <li>
-      <a href="javascript:comingSoon()">
-        <img src="images/contact.png" alt="About Me Icon" class="icon" id="side-me">
-      </a>
-    </li>
-  </ul>
-</div><!-- close sidebar -->
-
-<div id="game-area">
-  <h3 class="hidden nav-items" id="score">Score: 0</h3>
-</div>
-<!-- jQuery -->
-<script src="js/jQuery/jquery-3.2.1.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="js/Bootstrap/bootstrap.min.js"></script>
+<!-- JS Libraries -->
+<script src="js/libs/bootstrap.min.js"></script>
+<script src="js/libs/typed.js"></script>
+<script src="js/libs/particles.min.js"></script>
+<script src="js/libs/particles_config.js"></script>
 <!-- Custom JS -->
 <script src="js/main.js"></script>
-<script src="js/snake.js"></script>
 </body>
 </html>

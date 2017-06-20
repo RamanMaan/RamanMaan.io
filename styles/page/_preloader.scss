@@ -1,0 +1,88 @@
+/******************************************
+ * Preloader CSS
+ ******************************************/
+@import '../base/variables';
+@import '../base/mixins';
+
+// Ring Loader Variables
+$ring-thickness: 3px;
+$preloader-size: 200px;
+
+#preloader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: $background-color;
+}
+
+.ring-border {
+  border-radius: 50%;
+  border: $ring-thickness solid transparent;
+}
+
+#preloader {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: $preloader-size;
+  height: $preloader-size;
+  margin-top: -($preloader-size/2);
+  margin-left: -($preloader-size/2);
+
+  @extend .ring-border;
+  border-top-color: $primary-color;
+
+  @include animation(spin, 2s, linear);
+}
+
+#preloader:before {
+  $distance: 20px;
+  content: "";
+  position: absolute;
+  top: $distance;
+  left: $distance;
+  right: $distance;
+  bottom: $distance;
+
+  @extend .ring-border;
+  border-top-color: $secondary-color;
+
+  @include animation(spin-reverse, 0.7s, linear);
+}
+
+#preloader:after {
+  $distance: 30px;
+  content: "";
+  position: absolute;
+  top: $distance;
+  left: $distance;
+  right: $distance;
+  bottom: $distance;
+
+  @extend .ring-border;
+  border-top-color: $highlight-bright-color;
+
+  @include animation(spin, 1.7s, linear);
+}
+
+@include keyframes(spin) {
+  0% {
+    @include rotate(0deg);
+  }
+  100% {
+    @include rotate(360deg);
+  }
+}
+
+@include keyframes(spin-reverse) {
+  0% {
+    @include rotate(0deg);
+  }
+  100% {
+    @include rotate(-360deg);
+  }
+}

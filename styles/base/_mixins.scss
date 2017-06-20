@@ -1,0 +1,42 @@
+// calls both types of keyframes
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+}
+
+// rotates by $deg amount
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: rotate($deg); /* IE 9 */
+  transform: rotate($deg); /* Firefox 16+, IE 10+, Opera */
+}
+
+// runs an animation infinitely
+@mixin animation($animation, $duration, $timing) {
+  -webkit-animation: $animation $duration $timing infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: $animation $duration $timing infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+@mixin background-linear-gradient($colour1, $colour2) {
+  background-color: mix($colour1, $colour2);
+  background-image: -webkit-linear-gradient(left, $colour1 -15%, $colour2 25%, $colour2 75%, $colour1 115%);
+  background-image: -moz-linear-gradient(left, $colour1 -15%, $colour2 25%, $colour2 75%, $colour1 115%);
+  background-image: -ms-linear-gradient(left, $colour1 -15%, $colour2 25%, $colour2 75%, $colour1 115%);
+  background-image: -o-linear-gradient(left, $colour1 -15%, $colour2 25%, $colour2 75%, $colour1 115%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$colour1}', EndColorStr='#{$colour2}')";
+}
+
+@mixin background-radial-gradient($colour1, $colour2) {
+  background-color: mix($colour1, $colour2); /* Old browsers */
+  background-image: -moz-radial-gradient(center, ellipse cover, $colour1 0%, #colour2 100%, $colour1 100%);
+  background-image: -webkit-radial-gradient(center, ellipse cover, $colour1 0%, #colour2 100%, $colour1 100%);
+  background-image: radial-gradient(ellipse at center, $colour1 0%, $colour2 100%, $colour1 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$colour1}', EndColorStr='#{$colour2}')";
+}
