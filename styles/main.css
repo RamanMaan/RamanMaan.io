@@ -338,3 +338,9 @@ ul {
 
 .btn-reset {
   border: transparent; }
+
+.icon {
+  width: 25%;
+  max-width: 300px;
+  min-width: 50px;
+  filter: contrast(70%) invert(100%); }
