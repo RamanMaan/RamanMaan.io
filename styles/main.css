@@ -198,7 +198,6 @@ a:hover, a:focus {
 
 .jumbotron {
   margin-top: 20px;
-  margin-bottom: 50px;
   background-color: rgba(0, 0, 0, 0.07); }
 
 #typed-header {
@@ -331,6 +330,9 @@ canvas {
 .modal-title {
   font-weight: 700; }
 
+html {
+  height: 100%; }
+
 body {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden;
@@ -341,7 +343,8 @@ body {
   background-image: radial-gradient(ellipse at center, #214049 0%, #1e272c 100%, #214049 100%);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#214049', EndColorStr='#1e272c')";
   background-repeat: no-repeat;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  height: 100%; }
 
 ul {
   list-style-type: none; }
@@ -354,3 +357,11 @@ ul {
   max-width: 300px;
   min-width: 50px;
   filter: contrast(70%) invert(100%); }
+
+.vertical-align-container {
+  display: table;
+  height: 50%; }
+
+.vertical-align {
+  display: table-cell;
+  vertical-align: middle; }
