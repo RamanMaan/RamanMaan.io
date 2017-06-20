@@ -6,6 +6,8 @@
 @import '../base/mixins';
 
 .jumbotron {
+  margin-top: 20px;
+  margin-bottom: 50px;
   background-color: $jumbotron-background-color;
 }
 
