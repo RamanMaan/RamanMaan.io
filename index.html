@@ -46,7 +46,7 @@
     </div>
     <div class="col-xs-4">
       <img class="center-block" src="images/cancel.png">
-      <h2 class="nav-link text-center">About Me</h2>
+      <button type="button" class="nav-link h2 btn-reset btn-link center-block" data-toggle="modal" data-target="#aboutme">About Me</button>
     </div>
     <div class="col-xs-4">
       <img class="center-block" src="images/cancel.png">
@@ -58,6 +58,22 @@
       <h2 class="text-center">
         <a class="nav-link" href=old-design/index.html>Old Design</a>
       </h2>
+    </div>
+  </div>
+  <div class="modal fade" id="aboutme" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title text-center">About Me</h3>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary center-block" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
   </div>
 </div> <!-- Close Container -->

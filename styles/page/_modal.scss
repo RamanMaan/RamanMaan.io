@@ -1,0 +1,7 @@
+@import '../base/variables';
+
+.modal-header, .modal-body, .modal-footer {
+  color: $title-font-color;
+  background-color: $background-secondary-color;
+  border: .5px solid $background-color;
+}

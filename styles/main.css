@@ -168,7 +168,7 @@
   transition: width 2s; }
 
 .nav-link:focus {
-  color: inherit;
+  color: white;
   text-decoration: none; }
 
 .nav-link:hover {
@@ -261,7 +261,7 @@
   transition: width 2s; }
 
 .nav-link:focus {
-  color: inherit;
+  color: white;
   text-decoration: none; }
 
 .nav-link:hover {
@@ -315,6 +315,11 @@ canvas {
 /******************************************
  * End Particles
  ******************************************/
+.modal-header, .modal-body, .modal-footer {
+  color: #e8e8e8;
+  background-color: #214049;
+  border: 0.5px solid #1e272c; }
+
 body {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden;
@@ -329,6 +334,9 @@ body {
 
 ul {
   list-style-type: none; }
+
+.btn-reset {
+  border: transparent; }
 
 /******************************************
  * End Landing Page CSS

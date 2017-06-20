@@ -14,7 +14,7 @@ $underline-animation-color: $highlight-bright-color;
 }
 
 .nav-link:focus {
-  color: inherit;
+  color: $body-font-color;
   text-decoration: none;
 }
 

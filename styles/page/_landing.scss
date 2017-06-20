@@ -5,6 +5,7 @@
 @import '../base/mixins';
 @import '../animation/underline';
 @import 'particles';
+@import 'modal';
 
 body {
   font-family: $font;
@@ -18,6 +19,9 @@ ul {
   list-style-type: none;
 }
 
+.btn-reset {
+  border: transparent;
+}
 /******************************************
  * End Landing Page CSS
  ******************************************/
