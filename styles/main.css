@@ -305,8 +305,19 @@ canvas {
  ******************************************/
 .modal-header, .modal-body, .modal-footer {
   color: #e8e8e8;
-  background-color: #214049;
-  border: 0.5px solid #1e272c; }
+  background-color: #1e272c;
+  border: 0.5px solid #214049; }
+  .modal-header p, .modal-body p, .modal-footer p {
+    font-size: 16px;
+    font-weight: 300;
+    color: white; }
+  .modal-header li, .modal-body li, .modal-footer li {
+    font-size: 16px; }
+  .modal-header img, .modal-body img, .modal-footer img {
+    max-height: 650px; }
+
+.modal-title {
+  font-weight: 700; }
 
 body {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
