@@ -203,7 +203,7 @@ a:hover, a:focus {
 #typed-header {
   color: #e8e8e8;
   display: inline-block;
-  font-size: 42px; }
+  font-size: 68px; }
 
 #typed-header strong {
   font-weight: 700;
@@ -222,7 +222,7 @@ a:hover, a:focus {
 
 @media screen and (max-width: 768px) {
   #typed-header {
-    font-size: 36px; } }
+    font-size: 38px; } }
 
 @-webkit-keyframes blink {
   0% {
