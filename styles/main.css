@@ -330,8 +330,6 @@ canvas {
     font-size: 16px; }
   .modal-header iframe, .modal-body iframe, .modal-footer iframe {
     width: 100%; }
-  .modal-header img, .modal-body img, .modal-footer img {
-    max-height: 650px; }
 
 .modal-title {
   font-weight: 700; }
