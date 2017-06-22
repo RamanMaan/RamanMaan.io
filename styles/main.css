@@ -364,13 +364,15 @@ ul {
   min-width: 50px;
   filter: contrast(70%) invert(100%); }
 
-.vertical-align-container {
-  display: table;
-  height: 50%; }
-
-.vertical-align {
-  display: table-cell;
-  vertical-align: middle; }
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 .h2 {
   font-size: 32px; }
