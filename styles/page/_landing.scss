@@ -44,3 +44,13 @@ ul {
   display: table-cell;
   vertical-align: middle;
 }
+
+.h2 {
+  font-size: $subtitle-font-size-lg;
+}
+
+@media screen and (max-width: $screen-break-small) {
+  .h2 {
+    font-size: $subtitle-font-size-sm;
+  }
+}

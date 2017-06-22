@@ -2,7 +2,11 @@
 $font: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $title-font-color: #e8e8e8;
+$title-font-size-lg: 42px;
+$title-font-size-sm: 36px;
 $subtitle-font-color: #f8f8f8;
+$subtitle-font-size-lg: 32px;
+$subtitle-font-size-sm: 22px;
 
 $body-font-size: 16px;
 $body-font-color: white;
@@ -15,3 +19,5 @@ $highlight-bright-color: #52f8ab;
 
 $background-color: #1e272c;
 $background-secondary-color: #214049;
+
+$screen-break-small: 768px;

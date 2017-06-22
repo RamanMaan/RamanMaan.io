@@ -13,6 +13,7 @@
 #typed-header {
   color: $title-font-color;
   display: inline-block;
+  font-size: $title-font-size-lg;
 }
 
 #typed-header strong {
@@ -30,6 +31,12 @@
   color: $title-font-color !important;
   opacity: 1;
   @include animation(blink, 1s, ease);
+}
+
+@media screen and (max-width: $screen-break-small) {
+  #typed-header {
+    font-size: $title-font-size-sm;
+  }
 }
 
 @include keyframes(blink) {
