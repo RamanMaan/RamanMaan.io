@@ -1,0 +1,59 @@
+/** Navbar CSS **/
+@import '../base/variables';
+@import '../base/mixins';
+
+.navbar-transparent {
+  background: transparent;//background-color: rgba($navbar-background-color, 0.9);
+  border-bottom: 1px solid $navbar-border-color;
+  box-shadow: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @include transition(background 300ms ease-in-out);
+
+  a {
+    opacity: 1;
+    @include transition(background 400ms ease-in-out);
+  }
+
+  .nav > li > a:focus, .nav > li > a:hover {
+    background: $navbar-element-back-color;
+    color: $navbar-font-color;
+    font-weight: bolder;
+  }
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-brand>img {
+  height: 100%;
+  padding: 5px;
+  width: auto;
+}
+
+.navbar-transparent {
+  .navbar-nav>li>a {
+    font-family: $navbar-font;
+    font-size: $navbar-font-size;
+    color: $navbar-font-color;
+    text-transform: uppercase;
+  }
+
+  .navbar-toggle {
+    border-color: $navbar-border-color;
+    .icon-bar {
+      background-color: $navbar-border-color;
+    }
+  }
+
+  .navbar-toggle:hover, .navbar-toggle:focus {
+    background-color: rgba($navbar-background-color, 0.45);
+  }
+}
+
+.navbar-transparent.affix {
+  background-color: rgba($navbar-background-color, 0.6);
+  @include transition(background 300ms ease-in-out);
+}
