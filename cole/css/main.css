@@ -71,7 +71,7 @@
   background-size: cover; }
 
 .banner {
-  background-image: url("/manningconstruction.net/img/title_img.jpeg");
+  background-image: url("/cole/img/title_img.jpeg");
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -82,4 +82,4 @@
       width: 75%; }
 
 .img2 {
-  background-image: url("/manningconstruction.net/img/landing_picture.jpeg"); }
+  background-image: url("/cole/img/landing_picture.jpeg"); }
