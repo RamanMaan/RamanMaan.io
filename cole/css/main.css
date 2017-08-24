@@ -9,7 +9,7 @@
   -o-transition: background 300ms ease-in-out;
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out; }
-  .navbar-transparent a {
+  .navbar-transparent .nav > li > a {
     opacity: 1;
     -moz-transition: background 400ms ease-in-out;
     -o-transition: background 400ms ease-in-out;
@@ -49,6 +49,20 @@
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out; }
 
+.nav > li > .web-button {
+  background: #e86f19;
+  border: 2px solid #FFF;
+  padding: 13px;
+  color: #FFF;
+  font-weight: bolder;
+  -moz-transition: background 450ms ease-in-out;
+  -o-transition: background 450ms ease-in-out;
+  -webkit-transition: background 450ms ease-in-out;
+  transition: background 450ms ease-in-out; }
+
+.nav > li > .web-button:focus, .nav > li > .web-button:hover {
+  background: #a44e10 !important; }
+
 /** Landing Page CSS **/
 .parallax {
   min-height: 400px;
@@ -57,7 +71,7 @@
   background-size: cover; }
 
 .banner {
-  background-image: url("/cole/img/title_img.jpeg");
+  background-image: url("/manningconstruction.net/img/title_img.jpeg");
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -68,4 +82,4 @@
       width: 75%; }
 
 .img2 {
-  background-image: url("/cole/img/landing_picture.jpeg"); }
+  background-image: url("/manningconstruction.net/img/landing_picture.jpeg"); }

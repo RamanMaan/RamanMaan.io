@@ -3,7 +3,7 @@
 @import '../base/mixins';
 
 .navbar-transparent {
-  background: transparent;//background-color: rgba($navbar-background-color, 0.9);
+  background: transparent; //background-color: rgba($navbar-background-color, 0.9);
   border-bottom: 1px solid $navbar-border-color;
   box-shadow: none;
   padding-top: 10px;
@@ -11,7 +11,7 @@
 
   @include transition(background 300ms ease-in-out);
 
-  a {
+  .nav > li > a {
     opacity: 1;
     @include transition(background 400ms ease-in-out);
   }
@@ -27,14 +27,14 @@
   padding: 0;
 }
 
-.navbar-brand>img {
+.navbar-brand > img {
   height: 100%;
   padding: 5px;
   width: auto;
 }
 
 .navbar-transparent {
-  .navbar-nav>li>a {
+  .navbar-nav > li > a {
     font-family: $navbar-font;
     font-size: $navbar-font-size;
     color: $navbar-font-color;
@@ -56,4 +56,18 @@
 .navbar-transparent.affix {
   background-color: rgba($navbar-background-color, 0.6);
   @include transition(background 300ms ease-in-out);
+}
+
+.nav > li > .web-button {
+  background: $navbar-element-back-color;
+  border: 2px solid $navbar-border-color;
+  padding: 13px;
+  color: $navbar-font-color;
+  font-weight: bolder;
+
+  @include transition(background 450ms ease-in-out)
+}
+
+.nav > li > .web-button:focus, .nav > li > .web-button:hover {
+  background: darken($navbar-element-back-color, 15%) !important;
 }
