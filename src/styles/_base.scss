@@ -5,17 +5,17 @@ body {
     padding: 0;
     font-size: 100%;
     line-height: 1.5;
-    color: #555;
+    color: $font-pri-color;
     font-family: 'Montserrat', sans-serif;
 }
 article, aside, figcaption, figure, footer, header, nav, section {
     display: block;
 }
-h1, h2, h3, h4, stong {
+h1, h2, h3, h4, strong {
     margin-top: 1em;
     padding-top: 1em;
     line-height: 1.25;
-    color: #333;
+    color: $font-pri-color;
 }
 h1 {
     font-size: 2.5rem;
@@ -41,4 +41,12 @@ a img {
 }
 sup, sub {
     line-height: 0;
+}
+section {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 960px;
+    @media only screen and (min-width: $screen-break) {
+        width: 80%;
+    }
 }
