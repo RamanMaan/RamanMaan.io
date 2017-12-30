@@ -28,3 +28,10 @@ styles/libs/bootstrap.css
 ###########################
 *.psd
 *.temporary
+
+Jekyll
+-------
+_site
+.sass-cache
+node_modules
+
