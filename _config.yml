@@ -1,17 +1,17 @@
 # Site settings
-title: A blog about lorem ipsum dolor sit amet
-description: A blog about lorem ipsum dolor sit amet
-# baseurl: "/particle" # the subpath of your site, e.g. /blog
-# url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+title: Raman Maan
+description: A portfolio and blog for someone with kind of interesting, but mostly boring hobbies.
+#baseurl: "/" # the subpath of your site, e.g. /blog
+#url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
-username: Anon Developer
-user_description: Bicycle rights irony actually neutra typewriter lyft. Man bun taxidermy put a bird on it, umami yr ramps pop-up ugh bushwick chia lo-fi. Occupy bitters pour-over snackwave you probably haven't heard of them small batch. Cornhole mustache man bun letterpress echo park VHS.
+username: Raman Maan
+user_description: Software Developer. Level 4 Warlock in DnD. Coolest guy you don't know yet. Let's talk.
 user_title: Software Developer
-email: anon@anon.com
-twitter_username: lorem_ipsum
-github_username:  lorem_ipsum
-gplus_username:  lorem_ipsum
+
+link_github: https://github.com/Raman-Maan
+link_linkedin: https://www.linkedin.com/in/ramanmaan/
+link_codepen: https://codepen.io/ramanmaan/
 
 # Google-analytics
 google-analytics:
