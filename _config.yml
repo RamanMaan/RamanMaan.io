@@ -20,30 +20,35 @@ google-analytics:
 exclude: ['package.json', 'src' , 'node_modules']
 
 featured_projects:
-- title: Something
+- title: Neural Networks
   tags:
-  - Skill 1
-  - Skill 2
-  - Skill 3
-  desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  link: '#'
-  img: '/assets/img/mountains.jpg'
-  img_alt: 'mountains'
-- title: Something
+  - Machine Learning
+  - Neural Networks
+  - Synaptic.js
+  - Javascript
+  - Node
+  desc: A collection of neural networks I've made as I learn more about them. My favourite neural network is an addition neural network I created in Synaptic.js that adds two integers together in their bit form. 
+  link: 'https://github.com/Raman-Maan/neural_nets'
+  img: '/assets/img/robots.jpg'
+  img_alt: 'cardboard robots'
+- title: Manning Construction
   tags:
-  - Skill 1
-  - Skill 2
-  - Skill 3
-  desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  link: '#'
-  img: '/assets/img/mountains.jpg'
-  img_alt: 'mountains'
-- title: Something
+  - Node
+  - Sass
+  - Javascript
+  - Gulp
+  - Bootstrap 4
+  desc: I was hired to create a website for a local construction company, Manning Construction Company. This website is being developed as a Node application utilizing Bootstrap 4. Pug is being used for templating and Sass is used to handle styles. I'm using Gulp to expedite the development process and am hosting the website on an NGINX web server.
+  link: 'https://github.com/Raman-Maan/manning-construction'
+  img: '/assets/img/manningconstruction.png'
+  img_alt: 'screenshot of manning construction home page'
+- title: RamanMaan.io
   tags:
-  - Skill 1
-  - Skill 2
-  - Skill 3
-  desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  link: '#'
+  - Jekyll
+  - Liquid
+  - Sass
+  - Javascript
+  desc: That's right! This website you're reading this on right now was made by me, utilizing a Jekyll template. Initially this website began as a hackathon project to learn about web technologies; since then this website has gone through many iterations. It started as a simple portfolio website, and how now expanded to include a blog! You can see some of the iterations in the README on Github if that's your type of thing.
+  link: 'https://github.com/Raman-Maan/RamanMaan.io'
   img: '/assets/img/mountains.jpg'
-  img_alt: 'mountains'
+  img_alt: 'screenshot of RamanMaan.io home page'
