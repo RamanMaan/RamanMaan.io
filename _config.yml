@@ -18,3 +18,32 @@ google-analytics:
   id: ""
 
 exclude: ['package.json', 'src' , 'node_modules']
+
+featured_projects:
+- title: Something
+  tags:
+  - Skill 1
+  - Skill 2
+  - Skill 3
+  desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  link: '#'
+  img: '/assets/img/mountains.jpg'
+  img_alt: 'mountains'
+- title: Something
+  tags:
+  - Skill 1
+  - Skill 2
+  - Skill 3
+  desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  link: '#'
+  img: '/assets/img/mountains.jpg'
+  img_alt: 'mountains'
+- title: Something
+  tags:
+  - Skill 1
+  - Skill 2
+  - Skill 3
+  desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  link: '#'
+  img: '/assets/img/mountains.jpg'
+  img_alt: 'mountains'
