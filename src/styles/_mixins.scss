@@ -1,0 +1,25 @@
+@mixin background-radial-gradient($colour1, $colour2) {
+  background-color: mix($colour1, $colour2);
+  /* Old browsers */
+  background-image: -moz-radial-gradient(center, ellipse cover, $colour1 0%, $colour2 100%, $colour1 100%);
+  background-image: -webkit-radial-gradient(center, ellipse cover, $colour1 0%, $colour2 100%, $colour1 100%);
+  background-image: radial-gradient(ellipse at center, $colour1 0%, $colour2 100%, $colour1 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$colour1}', EndColorStr='#{$colour2}')";
+}
+
+@mixin primary-underline($width: 25%, $max-width:50%) {
+  & .primary-underline::after {
+    content: '';
+    position: absolute;
+    width: $width;
+    height: 2px;
+    bottom: 0; //calculate where it should be place to be centered
+    left: 50% - $width/2;
+    background-color: $pri;
+    transition: all 300ms;
+  }
+  &:hover .primary-underline::after {
+    width: $max-width;
+    left: 50% - $max-width/2;
+  }
+}

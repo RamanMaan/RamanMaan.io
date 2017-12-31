@@ -1,0 +1,28 @@
+section#about {
+  .user-details {
+    text-align: center;
+    margin: 5px auto;
+  }
+
+  .user {
+    text-align: center;
+    font-size: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    p {
+      font-size: 16px;
+    }
+
+    @media only screen and (min-width: $screen-break) {
+      flex-wrap: nowrap;
+      font-size: 75px;
+    }
+
+    .tech {
+      margin: 10px;
+    }
+  }
+}

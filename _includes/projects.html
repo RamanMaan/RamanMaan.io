@@ -1,0 +1,21 @@
+<div class="user-details">
+  <h1> Featured Projects </h1>
+</div>
+
+{% for project in site.featured_projects %}
+  <div class="user-projects">
+    <div class="{% cycle 'images-right', 'images-left' %}">
+      <img alt="{{project.img_alt}}" src="{{ project.img | prepend: site.baseurl }}" />
+    </div>
+    <div class="{% cycle 'contents', 'contents-right' %}">
+      <h3> {{project.title}} </h3>
+      <ul>
+        {% for tag in project.tags %}
+          <li> {{tag}} </li>
+        {% endfor %}
+      </ul>
+      <p> {{project.desc}} </p>
+      <a class="button" href="{{project.link}}">Take a look</a>
+    </div>
+  </div>
+{% endfor %}

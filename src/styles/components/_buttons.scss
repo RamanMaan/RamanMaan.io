@@ -1,0 +1,22 @@
+.button {
+  display: block;
+  width: 100px;
+  margin: 10px 0px;
+  padding: 0.5em;
+  color: $main;
+  background-color: transparent;
+  border: 1px solid $main;
+  border-radius: 7px;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  
+  &:hover, &:active {
+    background-color: $pri;
+    border-color: $pri;
+    color: #fff;
+    transition: all 0.2s ease-in;
+  }
+}
