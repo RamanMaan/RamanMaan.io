@@ -19,6 +19,8 @@ google-analytics:
 
 exclude: ['package.json', 'src' , 'node_modules']
 
+site_color: '#54516A'
+
 featured_projects:
 - title: Neural Networks
   tags:
