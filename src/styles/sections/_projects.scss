@@ -4,73 +4,76 @@ section#projects {
   justify-content: space-between;
 
   .user-projects {
-    margin: 2em auto;
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
+    margin: 0em auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &.reverse {
+      flex-direction: row-reverse;
     }
 
-    h5 {
-      margin: 0;
-    }
+    .image {
+      width: 50%;
 
-    ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0;
-      margin: 0;
-
-      li {
-        margin: 0.05em 0.1em;
-        padding: 0.2em 0.4em;
-        font-size: 1em;
-        line-height: 1;
-        color: $white;
-        background-color: $pri;
-        vertical-align: baseline;
-        border-radius: 0.25em;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
       }
-    }
-
-    p {
-      margin-right: 5px;
     }
 
     .contents {
-      @media only screen and (min-width: $screen-break) {
-        margin-left: 0;
-        width: 48%;
+      width: 40%;
+
+      h3 {
+        margin: 1em 0;
       }
-    }
-    
-    .contents-right {
-      @media only screen and (min-width: $screen-break) {
-        float: right;
-        margin-top: -5%;
-        width: 48%;
-      }
-    }
-    .images-right {
-      @media only screen and (min-width: $screen-break) {
-        float: right;
-        width: 48%;
-      }
-      img {
-        @media only screen and (min-width: $screen-break) {
-          float: right;
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+  
+        li {
+          margin: 0.05em 0.1em;
+          padding: 0.2em 0.4em;
+          font-size: 1em;
+          line-height: 1;
+          color: $white;
+          background-color: $pri;
+          vertical-align: baseline;
+          border-radius: 0.25em;
         }
       }
+
+      p {
+        margin-right: 5px;
+      }
+    }
+
+    @media only screen and (max-width: $screen-break) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-bottom: 4em;
+    }
+
+    .contents {
+      @media only screen and (max-width: $screen-break) {
+        width: 100%;
+      }
     }
     
-    .images-left {
-      @media only screen and (min-width: $screen-break) {
-        float: left;
-        width: 48%;
+    .image {
+      @media only screen and (max-width: $screen-break) {
+        width: 100%;
       }
       img {
-        @media only screen and (min-width: $screen-break) {
+        @media only screen and (max-width: $screen-break) {
           float: left;
         }
       }

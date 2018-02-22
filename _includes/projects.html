@@ -3,11 +3,11 @@
 </div>
 
 {% for project in site.featured_projects %}
-  <div class="user-projects">
-    <div class="{% cycle 'images-right', 'images-left' %}">
+  <div class="user-projects {% cycle 'reverse', '' %}">
+    <div class="image">
       <img alt="{{project.img_alt}}" src="{{ project.img | prepend: site.baseurl }}" />
     </div>
-    <div class="{% cycle 'contents', 'contents-right' %}">
+    <div class="contents">
       <h3> {{project.title}} </h3>
       <ul>
         {% for tag in project.tags %}
