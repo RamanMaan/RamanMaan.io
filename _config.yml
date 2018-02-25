@@ -22,6 +22,17 @@ exclude: ['package.json', 'src' , 'node_modules']
 site_color: '#54516A'
 
 featured_projects:
+- title: Pokedex
+  tags:
+  - React
+  - Redux
+  - Sass
+  - Bootstrap 4
+  desc: A pokedex built to learn how to implement Redux with React. Uses the publicly available API pokeapi to get information. Uses a custom themed version of Bootstrap 4. 
+  link: 'http://pokedex.ramanmaan.io'
+  img: '/assets/img/pokedex.png'
+  img_alt: 'screenshot of Pokedex home page'
+
 - title: Neural Networks
   tags:
   - Machine Learning
